@@ -1,5 +1,5 @@
 require 'baby'
-require 'rattle' # this is only here to illustrate an un-doubled example
+require 'rattle' # this is only here to illustrate example 1
 
 # A note on terminology. It's not as complicated as it first appears:
 # Everytime you've written an `expect(x).to y` statement you've created a mock.
@@ -65,7 +65,7 @@ describe Baby do
     end
 
     it '(5) should shake its rattle (unverified double) - should fail' do
-      # we can also use unverified doubles to fake real methods on the rattle class
+      # we can also use unverified doubles to stub real methods on the rattle class
       # as with our rattle shaking examples above
 
       rattle = double("I'm a fake rattle")
@@ -82,7 +82,7 @@ describe Baby do
     end
 
     it '(6) should shake its rattle (unverified double) - should pass' do
-      # we can also use unverified doubles to fake real methods on the rattle class
+      # we can also use unverified doubles to stub real methods on the rattle class
       # as with our rattle shaking examples above
 
       rattle = double("I'm a fake rattle")
@@ -95,6 +95,8 @@ describe Baby do
       expect(baby.shake_rattle).to eq("I'm a rattle being shaken")
 
       # this test will now pass as method is recognised and response is correct
+      # our test now checks whether `Baby.shake_rattle` calls `Rattle.rattle` as intended
+      # our test doesn't care what happens inside the Rattle class however
     end
 
     it '(7) should throw its rattle (unverified double)' do
