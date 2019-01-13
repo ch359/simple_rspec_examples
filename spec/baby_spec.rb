@@ -12,6 +12,12 @@ require 'rattle' # this is only here to illustrate example 1
 # The examples below illustrate these principles and the comments show what's
 # going on and whether the test is expected to pass or fail.
 
+# Note: my current understanding is that doubles or stubs should not be used for feature
+# tests since, by definition, they need to replicate the use of the actual program.
+# So a feature test file would be using the actual rattle (as in e.g. 2)
+# Your unit tests can go nuts with stubs and doubles
+
+
 describe Baby do
 
   context "Testing a hard dependency" do
