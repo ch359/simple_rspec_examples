@@ -19,6 +19,4 @@ class Baby
     @toys.push(@rattle)
   end
 
-
-
 end
