@@ -1,5 +1,5 @@
 require 'baby'
-require 'rattle' # this is only here to illustrate example 1
+require 'rattle' # this is only here to illustrate examples 1 and 2, more below
 
 # A note on terminology. It's not as complicated as it first appears:
 # Everytime you've written an `expect(x).to y` statement you've created a mock.
@@ -35,6 +35,9 @@ describe Baby do
     it '(2) should shake its rattle' do
       # this time we accept the default rattle, so could ditch the "require rattle" at the top
       # but we're still testing the output of the rattle class (maybe also not best practice?)
+
+      # NB: The 'require rattle' is not actually required for either example in this case, as Baby creates its own.
+      # But if Baby didn't do this, the 'require' would be needed, so I've left it in for illustrative purposes.
 
       baby = Baby.new
       expect(baby.shake_rattle).to eq("I'm a rattle being shaken")
@@ -101,7 +104,7 @@ describe Baby do
       expect(baby.shake_rattle).to eq("I'm a rattle being shaken")
 
       # this test will now pass as method is recognised and response is correct
-      # our test now checks whether `Baby.shake_rattle` calls `Rattle.rattle` as intended
+      # our test now checks whether `Baby.shake_rattle` calls `Rattle.shake` as intended
       # our test doesn't care what happens inside the Rattle class however
     end
 
