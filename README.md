@@ -5,7 +5,7 @@ I found online had more complexity that sometimes obscured what was going on.
 
 # How to use me
 
-Have a quick look at the lib files, and then read down the spec file which has a bunch of introductory text at the top and then lots of explanatory comments throughout the tests explaining what's going on as why. 
+Have a quick look at the lib files, and then read down the spec file which has a bunch of introductory text at the top and then lots of explanatory comments throughout the tests explaining what's going on and why. 
 
 # Notes and questions
 
