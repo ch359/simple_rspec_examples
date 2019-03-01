@@ -7,6 +7,6 @@ I found online had more complexity that sometimes obscured what was going on.
 
 Have a quick look at the lib files, and then read down the spec file which has a bunch of introductory text at the top and then lots of explanatory comments throughout the tests explaining what's going on and why. 
 
-# Notes and questions
+# Notes
 
 Still a WIP. Tests 4, 5, and 8 are expected to fail to illustrate issues. 
