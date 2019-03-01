@@ -112,7 +112,7 @@ describe Baby do
       # however, we can accidentally create doubles for methods that don't exist
       # note that there is no :throw method on the real rattle class
 
-      rattle = double(Rattle, throw: 'it flies across the room')
+      rattle = double(Rattle, throw_rattle: 'it flies across the room')
       # nb: I think this syntax is the same as a separate stub
       # i.e. `rattle = double(Rattle)`, `allow(rattle).to receive(:throw).and_
       # return('It flies across the room')`
@@ -133,16 +133,12 @@ describe Baby do
 
 
       rattle = instance_double(Rattle)
-      allow(rattle).to receive(:throw).and_return('it flies across the room')
+      allow(rattle).to receive(:throw_rattle).and_return('it flies across the room')
       baby = Baby.new(rattle) # inject the fake rattle
       expect(baby.throw_rattle).to eq('it flies across the room')
 
       # this test will now fail, as the verified double checks whether the method
       # exists in the Rattle class
-
-      # ** any idea why I get a NoMethodError rather than 'the Rattle class
-      # does not implement the class method: throw' I was expecting
-      # from walkthroughs?**
     end
 
     it '(9) should shake its rattle (verified double) - should pass' do

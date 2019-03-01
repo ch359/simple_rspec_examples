@@ -12,7 +12,7 @@ class Baby
   end
 
   def throw_rattle
-    @rattle.throw
+    @rattle.throw_rattle
   end
 
   def collect_rattle
