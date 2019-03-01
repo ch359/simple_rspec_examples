@@ -42,7 +42,6 @@ describe Baby do
       baby = Baby.new
       expect(baby.shake_rattle).to eq("I'm a rattle being shaken")
     end
-
   end
 
   context "Introducing unverified doubles" do
@@ -110,7 +109,7 @@ describe Baby do
 
     it '(7) should throw its rattle (unverified double)' do
       # however, we can accidentally create doubles for methods that don't exist
-      # note that there is no :throw method on the real rattle class
+      # note that there is no :throw_rattle method on the real rattle class
 
       rattle = double(Rattle, throw_rattle: 'it flies across the room')
       # nb: I think this syntax is the same as a separate stub
@@ -122,7 +121,6 @@ describe Baby do
 
       # this will succeed, even though it shouldn't
     end
-
   end
 
   context "Testing verified doubles" do
@@ -130,7 +128,6 @@ describe Baby do
     it '(8) should throw its rattle (verified double) - should fail' do
       # we can use a verified double to ensure this doesn't happen
       # only methods actually present in the doubled class are valid
-
 
       rattle = instance_double(Rattle)
       allow(rattle).to receive(:throw_rattle).and_return('it flies across the room')
@@ -149,5 +146,4 @@ describe Baby do
       expect(baby.shake_rattle).to eq("I'm a rattle being shaken")
     end
   end
-
 end
