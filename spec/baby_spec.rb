@@ -51,9 +51,9 @@ describe Baby do
       # the baby_spec file has no access to the actual Rattle class
       # we're now only testing the Baby class
 
-      rattle = double('I am a fake rattle aka unverified double')
-      baby = Baby.new(rattle) # we are injecting the fake rattle
-      expect(baby.collect_rattle).to eq([rattle])
+      fake_rattle = double('I am a fake rattle aka unverified double')
+      baby = Baby.new(fake_rattle) # we are injecting the fake rattle
+      expect(baby.collect_rattle).to eq([fake_rattle])
 
       # For the baby to collect its toys, we have no need to use any functionality
       # from the rattle class, so our fake rattle works just fine
@@ -113,7 +113,7 @@ describe Baby do
 
       rattle = double(Rattle, throw_rattle: 'it flies across the room')
       # nb: I think this syntax is the same as a separate stub
-      # i.e. `rattle = double(Rattle)`, `allow(rattle).to receive(:throw).and_
+      # i.e. `rattle = double(Rattle)`, `allow(rattle).to receive(:throw_rattle).and_
       # return('It flies across the room')`
 
       baby = Baby.new(rattle) # inject the fake rattle
